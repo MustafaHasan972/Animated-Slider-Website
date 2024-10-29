@@ -62,3 +62,28 @@
   left: auto;
   transition: width 0.3s ease-in-out;
 }
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.bg-slide,
+.bg-slide .circle,
+.bg-slide .circle img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-slide .circle {
+  pointer-events: none;
+  user-select: none;
+  overflow: hidden;
+}
+
+.bg-slide .circle img {
+  object-fit: cover;
+  transform: rotate(0deg) scale(2);
+}
