@@ -100,15 +100,40 @@
 }
 .bg-slide .circle.small {
   clip-path: circle(30% at 50% 50%);
-}
-
-.bg-slide.active .circle.small {
   z-index: 12;
 }
 
 .bg-slide .circle img {
   object-fit: cover;
-  transform: rotate(0deg) scale(2);
+  transform: rotate(0deg) scale(4);
+  opacity: 0;
+  transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.bg-slide.active .circle img {
+  transform: rotate(360deg) scale(2);
+  opacity: 1;
+}
+
+.bg-slide.after-active .circle img {
+  transform: rotate(720deg) scale(4);
+  opacity: 0;
+}
+
+.bg-slide.active .circle.bg img,
+.bg-slide.after-active .circle.bg img {
+  transition-delay: 0.9s;
+}
+
+.bg-slide.active .circle.large img,
+.bg-slide.after-active .circle.large img {
+  transition-delay: 0.6s;
+}
+
+.bg-slide.active .circle.small img,
+.bg-slide.after-active .circle.small img {
+  transition-delay: 0.3s;
 }
 
 .circle-darktransp {
